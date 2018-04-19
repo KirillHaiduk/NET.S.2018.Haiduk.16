@@ -1,0 +1,394 @@
+<stylecopresultscache>
+  <version>12</version>
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.03.08 16:31:07.664</styleCop>
+      <settingsFile>2018.03.10 13:39:12.443</settingsFile>
+      <sourceFile>2018.04.19 11:54:10.027</sourceFile>
+      <parser>2018.03.08 16:31:07.664</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.03.08 16:31:07.664</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.03.08 16:31:07.664</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ChangingMatrixElementEventArgs.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.03.08 16:31:07.664</styleCop>
+      <settingsFile>2018.03.10 13:39:12.443</settingsFile>
+      <sourceFile>2018.04.19 14:09:56.585</sourceFile>
+      <parser>2018.03.08 16:31:07.664</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.03.08 16:31:07.664</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.03.08 16:31:07.664</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to indexI must begin with the 'this.', 'base.', 'object.' or 'ChangingMatrixElementEventArgs&lt;T&gt;.' or 'EventArgs.' prefix to indicate the intended method call. </context>
+        <line>22</line>
+        <index>713</index>
+        <endIndex>718</endIndex>
+        <startLine>22</startLine>
+        <startColumn>13</startColumn>
+        <endLine>22</endLine>
+        <endColumn>18</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to indexJ must begin with the 'this.', 'base.', 'object.' or 'ChangingMatrixElementEventArgs&lt;T&gt;.' or 'EventArgs.' prefix to indicate the intended method call. </context>
+        <line>23</line>
+        <index>738</index>
+        <endIndex>743</endIndex>
+        <startLine>23</startLine>
+        <startColumn>13</startColumn>
+        <endLine>23</endLine>
+        <endColumn>18</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to indexI must begin with the 'this.', 'base.', 'object.' or 'ChangingMatrixElementEventArgs&lt;T&gt;.' or 'EventArgs.' prefix to indicate the intended method call. </context>
+        <line>29</line>
+        <index>899</index>
+        <endIndex>904</endIndex>
+        <startLine>29</startLine>
+        <startColumn>30</startColumn>
+        <endLine>29</endLine>
+        <endColumn>35</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to indexJ must begin with the 'this.', 'base.', 'object.' or 'ChangingMatrixElementEventArgs&lt;T&gt;.' or 'EventArgs.' prefix to indicate the intended method call. </context>
+        <line>34</line>
+        <index>1045</index>
+        <endIndex>1050</endIndex>
+        <startLine>34</startLine>
+        <startColumn>30</startColumn>
+        <endLine>34</endLine>
+        <endColumn>35</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="DiagonalMatrix.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.03.08 16:31:07.664</styleCop>
+      <settingsFile>2018.03.10 13:39:12.443</settingsFile>
+      <sourceFile>2018.04.19 14:16:47.152</sourceFile>
+      <parser>2018.03.08 16:31:07.664</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.03.08 16:31:07.664</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.03.08 16:31:07.664</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to size must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>24</line>
+        <index>735</index>
+        <endIndex>738</endIndex>
+        <startLine>24</startLine>
+        <startColumn>13</startColumn>
+        <endLine>24</endLine>
+        <endColumn>16</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to diagonalMatrix must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>25</line>
+        <index>758</index>
+        <endIndex>771</endIndex>
+        <startLine>25</startLine>
+        <startColumn>13</startColumn>
+        <endLine>25</endLine>
+        <endColumn>26</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to IndicesValidation must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>38</line>
+        <index>1242</index>
+        <endIndex>1258</endIndex>
+        <startLine>38</startLine>
+        <startColumn>17</startColumn>
+        <endLine>38</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to diagonalMatrix must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>39</line>
+        <index>1291</index>
+        <endIndex>1304</endIndex>
+        <startLine>39</startLine>
+        <startColumn>24</startColumn>
+        <endLine>39</endLine>
+        <endColumn>37</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to IndicesValidation must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>44</line>
+        <index>1379</index>
+        <endIndex>1395</endIndex>
+        <startLine>44</startLine>
+        <startColumn>17</startColumn>
+        <endLine>44</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to diagonalMatrix must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>47</line>
+        <index>1473</index>
+        <endIndex>1486</endIndex>
+        <startLine>47</startLine>
+        <startColumn>21</startColumn>
+        <endLine>47</endLine>
+        <endColumn>34</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to OnChanging must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>48</line>
+        <index>1524</index>
+        <endIndex>1533</endIndex>
+        <startLine>48</startLine>
+        <startColumn>21</startColumn>
+        <endLine>48</endLine>
+        <endColumn>30</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to diagonalMatrix must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>52</line>
+        <index>1700</index>
+        <endIndex>1713</endIndex>
+        <startLine>52</startLine>
+        <startColumn>21</startColumn>
+        <endLine>52</endLine>
+        <endColumn>34</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to diagonalMatrix must begin with the 'this.', 'base.', 'object.' or 'DiagonalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>53</line>
+        <index>1756</index>
+        <endIndex>1769</endIndex>
+        <startLine>53</startLine>
+        <startColumn>21</startColumn>
+        <endLine>53</endLine>
+        <endColumn>34</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="SquareMatrix.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.03.08 16:31:07.664</styleCop>
+      <settingsFile>2018.03.10 13:39:12.443</settingsFile>
+      <sourceFile>2018.04.19 14:24:01.113</sourceFile>
+      <parser>2018.03.08 16:31:07.664</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.03.08 16:31:07.664</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.03.08 16:31:07.664</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="FieldsMustBePrivate" ruleCheckId="SA1401">
+        <context>Fields must be declared with private access. Use properties to expose fields.</context>
+        <line>11</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustAppearInTheCorrectOrder" ruleCheckId="SA1201">
+        <context>All properties must be placed after all delegates.</context>
+        <line>64</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.OrderingRules" rule="ElementsMustAppearInTheCorrectOrder" ruleCheckId="SA1201">
+        <context>All properties must be placed after all events.</context>
+        <line>69</line>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="SymmetricalMatrix.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.03.08 16:31:07.664</styleCop>
+      <settingsFile>2018.03.10 13:39:12.443</settingsFile>
+      <sourceFile>2018.04.19 14:16:47.137</sourceFile>
+      <parser>2018.03.08 16:31:07.664</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.03.08 16:31:07.664</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.03.08 16:31:07.664</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to size must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>24</line>
+        <index>750</index>
+        <endIndex>753</endIndex>
+        <startLine>24</startLine>
+        <startColumn>13</startColumn>
+        <endLine>24</endLine>
+        <endColumn>16</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to symmetricalMatrix must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>25</line>
+        <index>773</index>
+        <endIndex>789</endIndex>
+        <startLine>25</startLine>
+        <startColumn>13</startColumn>
+        <endLine>25</endLine>
+        <endColumn>29</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to IndicesValidation must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>38</line>
+        <index>1269</index>
+        <endIndex>1285</endIndex>
+        <startLine>38</startLine>
+        <startColumn>17</startColumn>
+        <endLine>38</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to symmetricalMatrix must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>39</line>
+        <index>1318</index>
+        <endIndex>1334</endIndex>
+        <startLine>39</startLine>
+        <startColumn>24</startColumn>
+        <endLine>39</endLine>
+        <endColumn>40</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to IndicesValidation must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>44</line>
+        <index>1409</index>
+        <endIndex>1425</endIndex>
+        <startLine>44</startLine>
+        <startColumn>17</startColumn>
+        <endLine>44</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to symmetricalMatrix must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>45</line>
+        <index>1451</index>
+        <endIndex>1467</endIndex>
+        <startLine>45</startLine>
+        <startColumn>17</startColumn>
+        <endLine>45</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to symmetricalMatrix must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>46</line>
+        <index>1501</index>
+        <endIndex>1517</endIndex>
+        <startLine>46</startLine>
+        <startColumn>17</startColumn>
+        <endLine>46</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to OnChanging must begin with the 'this.', 'base.', 'object.' or 'SymmetricalMatrix&lt;T&gt;.' or 'SquareMatrix&lt;T&gt;.' prefix to indicate the intended method call. </context>
+        <line>47</line>
+        <index>1551</index>
+        <endIndex>1560</endIndex>
+        <startLine>47</startLine>
+        <startColumn>17</startColumn>
+        <endLine>47</endLine>
+        <endColumn>26</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="MatrixExtension.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2018.03.08 16:31:07.664</styleCop>
+      <settingsFile>2018.03.10 13:39:12.443</settingsFile>
+      <sourceFile>2018.04.19 16:55:50.187</sourceFile>
+      <parser>2018.03.08 16:31:07.664</parser>
+      <StyleCop.CSharp.DocumentationRules>2018.03.08 16:31:07.664</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>0</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2018.03.08 16:31:07.664</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2018.03.08 16:31:07.664</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2018.03.08 16:31:07.664</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <project key="1379548083">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+</stylecopresultscache>
