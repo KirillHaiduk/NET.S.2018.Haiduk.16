@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace MatrixHierarchy
 {
-    public class MatrixExtension<T> where T : struct
+    public static class MatrixExtension<T>
     {
-        public SquareMatrix<T> Add(SquareMatrix<T> matrixA, SquareMatrix<T> matrixB)
+        public static SquareMatrix<T> Add(SquareMatrix<T> matrixA, SquareMatrix<T> matrixB)
         {
             if (matrixA.Size >= matrixB.Size)
             {
@@ -17,7 +11,7 @@ namespace MatrixHierarchy
                 {
                     for (int j = 0; j < matrixB.Size; j++)
                     {
-                        newMatrix[i, j] += matrixB[i, j];
+                        newMatrix[i, j] += (dynamic)matrixB[i, j];
                     }
                 }
 
@@ -30,7 +24,7 @@ namespace MatrixHierarchy
                 {
                     for (int j = 0; j < matrixA.Size; j++)
                     {
-                        newMatrix[i, j] += matrixA[i, j];
+                        newMatrix[i, j] += (dynamic)matrixA[i, j];
                     }
                 }
 
