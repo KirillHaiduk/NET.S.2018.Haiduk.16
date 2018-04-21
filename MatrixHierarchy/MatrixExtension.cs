@@ -1,7 +1,17 @@
-namespace MatrixHierarchy
+﻿namespace MatrixHierarchy
 {
+    /// <summary>
+    /// Class that expand the functionality of Matrix Hierarchy 
+    /// </summary>
+    /// <typeparam name="T">Parameter type</typeparam>
     public static class MatrixExtension<T>
     {
+        /// <summary>
+        /// Method for addition of two matrices
+        /// </summary>
+        /// <param name="matrixA">1st matrix</param>
+        /// <param name="matrixB">2nd matrix</param>
+        /// <returns>New matrix as a result of addition of two accepted matrices</returns>
         public static SquareMatrix<T> Add(SquareMatrix<T> matrixA, SquareMatrix<T> matrixB)
         {
             if (matrixA.Size >= matrixB.Size)

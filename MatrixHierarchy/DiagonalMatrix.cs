@@ -11,7 +11,7 @@ namespace MatrixHierarchy
         private T[,] diagonalMatrix;
 
         /// <summary>
-        /// Constructor for Diagonal matrix
+        /// Constructor for creating instance of Diagonal matrix by accepted rank
         /// </summary>
         /// <param name="s">Matrix rank</param>
         public DiagonalMatrix(int s) : base(s)
@@ -21,8 +21,33 @@ namespace MatrixHierarchy
                 throw new ArgumentException($"{nameof(s)} must be greater than 0.");
             }
 
-            size = s;
-            diagonalMatrix = new T[s, s];
+            this.size = s;
+            this.diagonalMatrix = new T[s, s];
+        }
+
+        /// <summary>
+        /// Constructor for creating instance of Diagonal matrix from accepted array
+        /// </summary>
+        /// <param name="s">Accepted diagonal array</param>
+        public DiagonalMatrix(T[,] array) : base(array)
+        {
+            if (this.IsArraySquare(array) && this.IsArrayDiagonal(array))
+            {
+                this.diagonalMatrix = new T[array.GetLength(0), array.GetLength(0)];
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        this.diagonalMatrix[i, j] = array[i, j];
+                    }
+                }
+
+                this.size = array.GetLength(0);
+            }
+            else
+            {
+                throw new ArgumentException("Array is not diagonal");
+            }
         }
 
         /// <summary>
@@ -35,25 +60,43 @@ namespace MatrixHierarchy
         {
             get
             {
-                IndicesValidation(i, j);
-                return diagonalMatrix[i, j];
+                this.IndicesValidation(i, j);
+                return this.diagonalMatrix[i, j];
             }
 
             set
             {
-                IndicesValidation(i, j);
+                this.IndicesValidation(i, j);
                 if (i == j)
                 {
-                    diagonalMatrix[i, j] = value;
-                    OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
+                    this.diagonalMatrix[i, j] = value;
+                    this.OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
                 }
                 else if (i != j)
-                {                    
-                    diagonalMatrix[i, j] = default(T);
-                    diagonalMatrix[j, i] = default(T);
-                    throw new InvalidOperationException("All elements of Diagonal matrix which are outside the main diagonal are equal to zero");
+                {
+                    this.diagonalMatrix[i, j] = default(T);
+                    this.diagonalMatrix[j, i] = default(T);                    
                 }                
             }
+        }
+
+        private bool IsArrayDiagonal(T[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (i != j)
+                    {
+                        if (!array[i, j].Equals(array[j, i]) && !array[i, j].Equals(default(T)))
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

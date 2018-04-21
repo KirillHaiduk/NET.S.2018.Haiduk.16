@@ -19,18 +19,18 @@ namespace MatrixHierarchy
         /// <param name="j">Index j of square matrix</param>
         public ChangingMatrixElementEventArgs(int i, int j)
         {
-            indexI = i;
-            indexJ = j;
+            this.indexI = i;
+            this.indexJ = j;
         }
 
         /// <summary>
         /// Property for getting index i of square matrix
         /// </summary>
-        public int IndexI => indexI;
+        public int IndexI => this.indexI;
 
         /// <summary>
         /// Property for getting index j of square matrix
         /// </summary>
-        public int IndexJ => indexJ;
+        public int IndexJ => this.indexJ;
     }
 }

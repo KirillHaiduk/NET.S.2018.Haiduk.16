@@ -11,7 +11,7 @@ namespace MatrixHierarchy
         private T[,] symmetricalMatrix;
 
         /// <summary>
-        /// Constructor for Symmetrical matrix
+        /// Constructor for creating instance of Symmetrical matrix by accepted rank
         /// </summary>
         /// <param name="s">Matrix rank</param>
         public SymmetricalMatrix(int s) : base(s)
@@ -21,8 +21,33 @@ namespace MatrixHierarchy
                 throw new ArgumentException($"{nameof(s)} must be greater than 0.");
             }
 
-            size = s;
-            symmetricalMatrix = new T[s, s];
+            this.size = s;
+            this.symmetricalMatrix = new T[s, s];
+        }
+
+        /// <summary>
+        /// Constructor for creating instance of Symmetrical matrix from accepted array
+        /// </summary>
+        /// <param name="s">Accepted symmetrical array</param>
+        public SymmetricalMatrix(T[,] array) : base(array)
+        {
+            if (this.IsArraySquare(array) && this.IsArraySymmetrical(array))
+            {
+                this.symmetricalMatrix = new T[array.GetLength(0), array.GetLength(0)];
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        this.symmetricalMatrix[i, j] = array[i, j];
+                    }
+                }
+
+                this.size = array.GetLength(0);
+            }
+            else
+            {
+                throw new ArgumentException("Array is not symmetrical");
+            }
         }
 
         /// <summary>
@@ -35,17 +60,33 @@ namespace MatrixHierarchy
         {
             get
             {
-                IndicesValidation(i, j);
-                return symmetricalMatrix[i, j];
+                this.IndicesValidation(i, j);
+                return this.symmetricalMatrix[i, j];
             }
 
             set
             {
-                IndicesValidation(i, j);
-                symmetricalMatrix[i, j] = value;
-                symmetricalMatrix[j, i] = value;
-                OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
+                this.IndicesValidation(i, j);
+                this.symmetricalMatrix[i, j] = value;
+                this.symmetricalMatrix[j, i] = value;
+                this.OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
             }
-        }        
+        }
+
+        private bool IsArraySymmetrical(T[,] array)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    if (i != j && !array[i, j].Equals(array[j, i]))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 }
