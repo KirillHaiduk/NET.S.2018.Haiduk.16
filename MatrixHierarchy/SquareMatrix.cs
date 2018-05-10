@@ -3,35 +3,23 @@
 namespace MatrixHierarchy
 {
     /// <summary>
-    /// Class that describes square matrix of T type elements and event that occurs when a matrix element changes with indices (i, j)
+    /// Describes square matrix of T type elements and event that occurs when a matrix element changes with indices (i, j)
     /// </summary>
     /// <typeparam name="T">Parameter type</typeparam>
-    public class SquareMatrix<T>
+    public class SquareMatrix<T> : BaseMatrix<T>
     {
-        protected int size;
+        private int size;
 
         private T[,] squareMatrix;
-
-        /// <summary>
-        /// Constructor without parameters
-        /// </summary>
-        public SquareMatrix()
-        {
-        }
-
+                
         /// <summary>
         /// Constructor for creating instance of Square matrix by accepted rank
         /// </summary>
         /// <param name="sideOfMatrix">Matrix rank</param>
-        public SquareMatrix(int sideOfMatrix)
+        public SquareMatrix(int sideOfMatrix) : base(sideOfMatrix)
         {
-            if (sideOfMatrix <= 0)
-            {
-                throw new ArgumentException($"{nameof(sideOfMatrix)} must be greater than 0.");
-            }
-
-            size = sideOfMatrix;
-            squareMatrix = new T[sideOfMatrix, sideOfMatrix];
+            this.size = sideOfMatrix;
+            this.squareMatrix = new T[sideOfMatrix, sideOfMatrix];
         }
 
         /// <summary>
@@ -40,18 +28,18 @@ namespace MatrixHierarchy
         /// <param name="s">Accepted square array</param>
         public SquareMatrix(T[,] array)
         {            
-            if (IsArraySquare(array))
+            if (this.IsArraySquare(array))
             {
-                squareMatrix = new T[array.GetLength(0), array.GetLength(0)];
+                this.squareMatrix = new T[array.GetLength(0), array.GetLength(0)];
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
                     for (int j = 0; j < array.GetLength(1); j++)
                     {
-                        squareMatrix[i, j] = array[i, j];
+                        this.squareMatrix[i, j] = array[i, j];
                     }
                 }
 
-                size = array.GetLength(0);
+                this.size = array.GetLength(0);
             }
             else
             {
@@ -62,7 +50,7 @@ namespace MatrixHierarchy
         /// <summary>
         /// Property for getting size of square matrix
         /// </summary>
-        public int Size => size;
+        public override int Size => this.size;
 
         /// <summary>
         /// Indexer for Square matrix, also initiates event and sends information in it
@@ -70,72 +58,43 @@ namespace MatrixHierarchy
         /// <param name="i">Index i of square matrix</param>
         /// <param name="j">Index j of square matrix</param>
         /// <returns>Access to matrix elements by indices</returns>
-        public virtual T this[int i, int j]
+        public override T this[int i, int j]
         {
             get
             {
-                IndicesValidation(i, j);
-                return squareMatrix[i, j];
+                this.IndicesValidation(i, j);
+                return this.squareMatrix[i, j];
             }
 
             set
             {
-                IndicesValidation(i, j);
-                squareMatrix[i, j] = value;
+                this.IndicesValidation(i, j);
+                this.squareMatrix[i, j] = value;
                 OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
             }
         }
 
-        #region Event of changing Matrix element
-
-        /// <summary>
-        /// Delegate for handling event
-        /// </summary>
-        /// <param name="sender">Name of event broadcaster</param>
-        /// <param name="e">Information about event</param>
-        public delegate void ChangingMatrixElementEventHandler(object sender, ChangingMatrixElementEventArgs<T> e);
-
-        /// <summary>
-        /// Event member
-        /// </summary>
-        public event ChangingMatrixElementEventHandler Changing = delegate { };
-
-        protected virtual void OnChanging(object sender, ChangingMatrixElementEventArgs<T> e) => Changing?.Invoke(sender, e);
-
-        #endregion          
-
         /// <summary>
         /// Method for converting matrix to array
-        /// </summary>
-        /// <param name="matrix">Accepted square matrix</param>
+        /// </summary>        
         /// <returns>Array that contains matrix elements</returns>
-        public static T[,] ToArray(SquareMatrix<T> matrix)
+        public override T[,] ToArray()
         {
-            if (matrix is null)
+            if (this is null)
             {
-                throw new ArgumentNullException(nameof(matrix));
+                throw new ArgumentNullException("Matrix is null");
             }
 
-            T[,] array = new T[matrix.Size, matrix.Size];
-            for (int i = 0; i < matrix.Size; i++)
+            T[,] array = new T[this.Size, this.Size];
+            for (int i = 0; i < this.Size; i++)
             {
-                for (int j = 0; j < matrix.Size; j++)
+                for (int j = 0; j < this.Size; j++)
                 {
-                    array[i, j] = matrix[i, j];
+                    array[i, j] = this[i, j];
                 }
             }
 
             return array;
-        }
-
-        #region Private methods
-
-        protected virtual void IndicesValidation(int i, int j)
-        {
-            if (i < 0 || j < 0 || i >= size || j >= size)
-            {
-                throw new ArgumentOutOfRangeException($"Index cannot be less than zero or more than actual matrix length.");
-            }
         }
 
         private bool IsArraySquare(T[,] array)
@@ -147,7 +106,5 @@ namespace MatrixHierarchy
 
             return true;
         }
-
-        #endregion
     }
 }

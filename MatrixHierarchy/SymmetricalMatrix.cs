@@ -6,26 +6,24 @@ namespace MatrixHierarchy
     /// Class that describes symmetrical matrix of T type elements and event that occurs when a matrix element changes with indices (i, j)
     /// </summary>
     /// <typeparam name="T">Parameter type</typeparam>
-    public class SymmetricalMatrix<T> : SquareMatrix<T>
+    public class SymmetricalMatrix<T> : BaseMatrix<T>
     {
-        private T[][] symmetricalValues;
+        private int size;
 
-        private T[,] symmetricalMatrix;
+        private T[][] symmetricalValues;
 
         /// <summary>
         /// Constructor for creating instance of Symmetrical matrix by accepted rank
         /// </summary>
         /// <param name="sideOfMatrix">Matrix rank</param>
-        public SymmetricalMatrix(int sideOfMatrix)
+        public SymmetricalMatrix(int sideOfMatrix) : base(sideOfMatrix)
         {
-            if (sideOfMatrix <= 0)
-            {
-                throw new ArgumentException($"{nameof(sideOfMatrix)} must be greater than 0.");
-            }
-
             this.size = sideOfMatrix;
             this.symmetricalValues = new T[sideOfMatrix][];
-            this.symmetricalMatrix = new T[sideOfMatrix, sideOfMatrix];
+            for (int i = 0; i < sideOfMatrix; i++)
+            {
+                this.symmetricalValues[i] = new T[i + 1];
+            }
         }
 
         /// <summary>
@@ -37,15 +35,12 @@ namespace MatrixHierarchy
             if (this.IsArraySymmetrical(array))
             {
                 this.symmetricalValues = new T[array.GetLength(0)][];
-                this.symmetricalMatrix = new T[array.GetLength(0), array.GetLength(0)];
                 for (int i = 0; i < array.GetLength(0); i++)
                 {
                     this.symmetricalValues[i] = new T[array[i].Length];
                     for (int j = 0; j < array[i].Length; j++)
                     {
                         this.symmetricalValues[i][j] = array[i][j];
-                        this.symmetricalMatrix[array.GetLength(0) - 1 - i + j, j] = array[i][j];
-                        this.symmetricalMatrix[j, array.GetLength(0) - 1 - i + j] = array[i][j];                        
                     }
                 }
 
@@ -58,6 +53,11 @@ namespace MatrixHierarchy
         }
 
         /// <summary>
+        /// Property for getting size of square matrix
+        /// </summary>
+        public override int Size => this.size;
+
+        /// <summary>
         /// Indexer for Symmetrical matrix, also initiates event and sends information in it
         /// </summary>
         /// <param name="i">Index i of symmetrical matrix</param>
@@ -67,17 +67,57 @@ namespace MatrixHierarchy
         {
             get
             {
-                this.IndicesValidation(i, j);                
-                return this.symmetricalMatrix[i, j];
+                this.IndicesValidation(i, j);
+                if (i >= j)
+                {
+                    return this.symmetricalValues[i][j];
+                }
+                else
+                {
+                    return this.symmetricalValues[j][i];
+                }
             }
 
             set
             {
                 this.IndicesValidation(i, j);
-                this.symmetricalMatrix[i, j] = value;
-                this.symmetricalMatrix[j, i] = value;
+                if (i >= j)
+                {
+                    this.symmetricalValues[i][j] = value;
+                }
+                else
+                {
+                    this.symmetricalValues[j][i] = value;
+                }
+
                 this.OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
             }
+        }
+
+        /// <summary>
+        /// Method for converting matrix to array
+        /// </summary>        
+        /// <returns>Array that contains matrix elements</returns>
+        public override T[,] ToArray()
+        {
+            T[,] array = new T[this.Size, this.Size];
+            for (int i = 0; i < this.symmetricalValues.GetLength(0); i++)
+            {
+                for (int j = 0; j < this.symmetricalValues[i].Length; j++)
+                {
+                    if (i == j)
+                    {
+                        array[i, j] = this.symmetricalValues[i][j];
+                    }
+                    else
+                    {
+                        array[i, j] = this.symmetricalValues[i][j];
+                        array[j, i] = this.symmetricalValues[i][j];
+                    }
+                }
+            }
+
+            return array;
         }
 
         private bool IsArraySymmetrical(T[][] array)

@@ -6,26 +6,20 @@ namespace MatrixHierarchy
     /// Class that describes diagonal matrix of T type elements and event that occurs when a matrix element changes with indices (i, j)
     /// </summary>
     /// <typeparam name="T">Parameter type</typeparam>
-    public class DiagonalMatrix<T> : SquareMatrix<T>
+    public class DiagonalMatrix<T> : BaseMatrix<T>
     {
-        private T[] diagonalValues;
+        private int size;
 
-        private T[,] diagonalMatrix;
+        private T[] diagonalValues;
 
         /// <summary>
         /// Constructor for creating instance of Diagonal matrix by accepted rank
         /// </summary>
         /// <param name="sideOfMatrix">Matrix rank</param>
-        public DiagonalMatrix(int sideOfMatrix)
+        public DiagonalMatrix(int sideOfMatrix) : base(sideOfMatrix)
         {
-            if (sideOfMatrix <= 0)
-            {
-                throw new ArgumentException($"{nameof(sideOfMatrix)} must be greater than 0.");
-            }
-
             this.size = sideOfMatrix;
             this.diagonalValues = new T[sideOfMatrix];
-            this.diagonalMatrix = new T[sideOfMatrix, sideOfMatrix];
         }
 
         /// <summary>
@@ -35,15 +29,18 @@ namespace MatrixHierarchy
         public DiagonalMatrix(T[] array)
         {
             this.diagonalValues = new T[array.Length];
-            this.diagonalMatrix = new T[array.Length, array.Length];
             for (int i = 0; i < array.Length; i++)
             {
                 this.diagonalValues[i] = array[i];
-                this.diagonalMatrix[i, i] = array[i];
             }
 
             this.size = array.Length;
         }
+
+        /// <summary>
+        /// Property for getting size of square matrix
+        /// </summary>
+        public override int Size => this.size;
 
         /// <summary>
         /// Indexer for Diagonal matrix, also initiates event and sends information in it
@@ -71,15 +68,39 @@ namespace MatrixHierarchy
                 this.IndicesValidation(i, j);
                 if (i == j)
                 {
-                    this.diagonalMatrix[i, j] = value;
+                    this.diagonalValues[i] = value;
                     this.OnChanging(this, new ChangingMatrixElementEventArgs<T>(i, j));
                 }
                 else if (i != j)
                 {
-                    this.diagonalMatrix[i, j] = default(T);
-                    this.diagonalMatrix[j, i] = default(T);
+                    throw new ArgumentException("Elements which are not on main diagonal of Diagonal matrix must have their default value");
                 }
             }
+        }
+
+        /// <summary>
+        /// Method for converting matrix to array
+        /// </summary>        
+        /// <returns>Array that contains matrix elements</returns>
+        public override T[,] ToArray()
+        {
+            T[,] array = new T[this.Size, this.Size];
+            for (int i = 0; i < this.Size; i++)
+            {
+                for (int j = 0; j < this.Size; j++)
+                {
+                    if (i == j)
+                    {
+                        array[i, j] = this.diagonalValues[i];
+                    }
+                    else
+                    {
+                        array[i, j] = default(T);
+                    }
+                }
+            }
+
+            return array;
         }
     }
 }
