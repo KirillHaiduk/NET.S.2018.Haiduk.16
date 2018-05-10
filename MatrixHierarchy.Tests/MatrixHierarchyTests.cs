@@ -40,7 +40,7 @@ namespace MatrixHierarchy.Tests
             var matrixA = new SquareMatrix<int>(array1);
             var matrixB = new SquareMatrix<int>(array2);
             var sum = MatrixExtension<int>.Add(matrixA, matrixB);
-            CollectionAssert.AreEqual(resultArray, SquareMatrix<int>.ToArray(sum));
+            CollectionAssert.AreEqual(resultArray, sum.ToArray());
         }
 
         [Test]
@@ -48,11 +48,11 @@ namespace MatrixHierarchy.Tests
         {
             var array1 = new string[][] { new string[] { "-3" }, new string[] { "6", "-5" }, new string[] { "5", "7", "4" } };
             var array2 = new string[] { "ab", "cd", "ef" };
-            var resultArray = new string[,] { { "5ab", "6", "-3" }, { "6", "7cd", "-5" }, { "-3", "-5", "4ef" } };
+            var resultArray = new string[,] { { "-3ab", "6", "5" }, { "6", "-5cd", "7" }, { "5", "7", "4ef" } };
             var matrixA = new SymmetricalMatrix<string>(array1);
             var matrixB = new DiagonalMatrix<string>(array2);
             var sum = MatrixExtension<string>.Add(matrixA, matrixB);
-            CollectionAssert.AreEqual(resultArray, SquareMatrix<string>.ToArray(sum));
+            CollectionAssert.AreEqual(resultArray, sum.ToArray());
         }
     }
 }
